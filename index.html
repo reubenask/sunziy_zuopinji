@@ -1,90 +1,379 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Delgadina Sun - Portfolio</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1d2426; line-height: 1.6; }
-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 20px; text-align: center; }
-header h1 { font-size: 3rem; margin: 20px 0; }
-header p { font-size: 1.1rem; opacity: 0.95; }
-.container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-.section { margin: 50px 0; padding: 30px; border-left: 4px solid #667eea; }
-.section h2 { color: #667eea; font-size: 2rem; margin-bottom: 20px; }
-.section p, .section li { font-size: 1rem; margin: 10px 0; }
-ul { margin-left: 20px; }
-a { color: #667eea; text-decoration: none; font-weight: 600; }
-a:hover { text-decoration: underline; }
-.contact-links { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
-.contact-links a { display: inline-block; padding: 10px 20px; border: 2px solid #667eea; border-radius: 4px; }
-footer { background: #f5f5f5; padding: 20px; text-align: center; color: #666; margin-top: 50px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delgadina Sun - Visual Designer & AI Creative</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html, body { 
+            width: 100%; 
+            height: 100%; 
+            background: #ffffff; 
+            color: #1d2426; 
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.8; 
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 40px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 20px 0;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin: 20px 0;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1rem;
+            margin-top: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+        
+        section {
+            margin: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            font-weight: 700;
+            margin: 40px 0 30px 0;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 15px 0 25px 0;
+            line-height: 1.7;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .metric-card {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .metric-number {
+            font-size: 2.5rem;
+            color: #667eea;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .metric-label {
+            font-size: 0.95rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .metric-desc {
+            font-size: 0.95rem;
+            color: #777;
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        
+        .capabilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .capability-item {
+            background: white;
+            padding: 25px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .capability-item:hover {
+            background: #f8f9ff;
+            transform: translateY(-5px);
+        }
+        
+        .capability-item h3 {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        
+        .capability-item p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .step h4 {
+            color: #1d2426;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-section p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin: 15px 0;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            padding: 14px 28px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .contact-link:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 40px;
+            text-align: center;
+            color: #666;
+            margin-top: 80px;
+        }
+        
+        footer p {
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 40px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .metrics, .capabilities, .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="hero">
+        <h1>✓ DELGADINA SUN</h1>
+        <p class="subtitle">Visual Designer · AI Creative · Brand Designer</p>
+        <p class="tagline">以视觉的直觉，连接品牌、图像与被看见的瞬间。<br>Based in Hangzhou, working everywhere.</p>
+    </div>
 
-<header>
-<h1>✓ DELGADINA SUN</h1>
-<p>Visual Designer · AI Creative · Brand Designer</p>
-<p>Based in Hangzhou, working everywhere</p>
-</header>
+    <div class="content">
+        <section>
+            <h2 class="section-title">ABOUT ME</h2>
+            <p class="section-subtitle">孙梓怡 / DELGADINA SUN</p>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: #555;">
+                4 years+ of brand visual, content spreading, and AI image experiments. I work at the intersection of commercial growth and visual expression. Specialized in executing brand visuals, content narratives, and digital touchpoints from 0 to 1.
+            </p>
+        </section>
 
-<div class="container">
+        <section>
+            <h2 class="section-title">EXPERIENCE & REACH</h2>
+            <div class="metrics">
+                <div class="metric-card">
+                    <span class="metric-number">4+</span>
+                    <div class="metric-label">Years of Making</div>
+                    <div class="metric-desc">Continuous involvement in brand visuals, content distribution, AI experiments, and commercial applications</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">5M</span>
+                    <div class="metric-label">Single-Post Reach</div>
+                    <div class="metric-desc">Proficient in social platform first-impression appeal, rhythm, and shareable visual language</div>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">20+</span>
+                    <div class="metric-label">Global Collaborations</div>
+                    <div class="metric-desc">Worked with diverse brands across regions, maintaining balance between aesthetics and delivery</div>
+                </div>
+            </div>
+        </section>
 
-<div class="section">
-<h2>About Me</h2>
-<p>孙梓怡 / DELGADINA SUN</p>
-<p>4 years+ of brand visual, content spreading, and AI image experiments. I work at the intersection of commercial growth and visual expression. Specialized in executing brand visuals, content narratives, and digital touchpoints from 0 to 1.</p>
-<p><a href="mailto:Miacheno401@gmail.com">📧 Email: Miacheno401@gmail.com</a></p>
-</div>
+        <section>
+            <h2 class="section-title">CAPABILITIES</h2>
+            <div class="capabilities">
+                <div class="capability-item">
+                    <h3>01. Brand World</h3>
+                    <p>Complete visual identity systems from strategy to execution across all touchpoints and channels.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>02. Image Making</h3>
+                    <p>Photography direction, art direction, and cinematic visual composition for campaigns and content.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>03. AI Native</h3>
+                    <p>Leveraging AI tools for rapid experimentation and creative generation at scale with precision.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>04. Digital Touchpoints</h3>
+                    <p>Web design, social media, interfaces, and interactive experiences that drive engagement.</p>
+                </div>
+            </div>
+        </section>
 
-<div class="section">
-<h2>Experience & Metrics</h2>
-<ul>
-<li><strong>4+ Years</strong> - Continuous involvement in brand visuals, content distribution, AI image experiments, and commercial applications</li>
-<li><strong>5M+ Reach</strong> - Single-post content reach at millions scale, proficient in social platform first-impression appeal and shareable visual language</li>
-<li><strong>20+ Global Collaborations</strong> - Worked with brands and creators across different regions and types, maintaining stable balance between aesthetics, communication, and delivery</li>
-</ul>
-</div>
+        <section>
+            <h2 class="section-title">HOW I WORK</h2>
+            <p class="section-subtitle">从模糊情绪到可落地系统，把灵感、AI 实验和商业传播收束到同一个视觉方向里。</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h4>Sense</h4>
+                    <p>捕捉情绪、受众直觉和品牌想被记住的瞬间</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h4>Structure</h4>
+                    <p>建立视觉系统、色彩、图像规则和叙事节奏</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h4>Generate</h4>
+                    <p>用 AI 与影像实验快速扩展和筛选可能性</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h4>Refine</h4>
+                    <p>把视觉落到 campaign、社媒、页面和品牌触点</p>
+                </div>
+            </div>
+        </section>
 
-<div class="section">
-<h2>Capabilities</h2>
-<ul>
-<li><strong>Brand World:</strong> Complete visual identity systems from strategy to execution across all touchpoints</li>
-<li><strong>Image Making:</strong> Photography direction, art direction, cinematic visual composition for campaigns</li>
-<li><strong>AI Native:</strong> Leveraging AI tools for rapid experimentation and creative generation at scale</li>
-<li><strong>Digital Touchpoints:</strong> Web design, social media, interfaces, and interactive experiences that engage</li>
-</ul>
-</div>
+        <div class="contact-section">
+            <h2>LET'S WORK TOGETHER</h2>
+            <p>Available for brand visual, AI campaigns, and art direction.</p>
+            <p>Open to collaborations that need a visual world, not just a single image.</p>
+            <div class="contact-links">
+                <a href="mailto:Miacheno401@gmail.com" class="contact-link">📧 EMAIL</a>
+                <a href="tel:15564110401" class="contact-link">📱 WECHAT</a>
+                <a href="#" class="contact-link">📄 CV</a>
+            </div>
+        </div>
+    </div>
 
-<div class="section">
-<h2>Work Method - How I Shape a Visual World</h2>
-<ol style="margin-left: 20px;">
-<li><strong>Sense:</strong> 捕捉情绪、受众直觉和品牌想被记住的瞬间 (Capture emotion, audience intuition, and brand moments)</li>
-<li><strong>Structure:</strong> 建立视觉系统 (Build visual systems with color, imagery rules, narrative rhythm, and usage boundaries)</li>
-<li><strong>Generate:</strong> 用 AI 与影像实验快速扩展可能性 (Use AI and image experiments to rapidly expand possibilities)</li>
-<li><strong>Refine:</strong> 把视觉落到 campaign、社媒、页面和品牌触点 (Deploy visuals across campaigns, social, pages, and brand touchpoints)</li>
-</ol>
-</div>
-
-<div class="section">
-<h2>Get In Touch</h2>
-<p>Available for brand visual, AI campaigns, and art direction. Open to collaborations that need a visual world, not just a single image.</p>
-<div class="contact-links">
-<a href="mailto:Miacheno401@gmail.com">📧 Email</a>
-<a href="tel:15564110401">📱 WeChat: 15564110401</a>
-<a href="#">📄 Download CV</a>
-</div>
-</div>
-
-</div>
-
-<footer>
-<p>HANGZHOU / CHINA</p>
-<p>VISUAL · AI · BRAND DESIGN</p>
-<p>© 2026 DELGADINA SUN - All Rights Reserved</p>
-</footer>
-
+    <footer>
+        <p><strong>HANGZHOU / CHINA</strong></p>
+        <p>VISUAL · AI · BRAND DESIGN</p>
+        <p>© 2026 DELGADINA SUN - All Rights Reserved</p>
+    </footer>
 </body>
 </html>
