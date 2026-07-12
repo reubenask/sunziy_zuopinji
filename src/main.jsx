@@ -6,6 +6,7 @@ import SkillsCircularGallery from './SkillsCircularGallery'
 import './style.css'
 
 const { useEffect, useState } = React
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 
 function App() {
   const [menu, setMenu] = useState(false)
@@ -43,7 +44,7 @@ function App() {
 
   return <main>
     <section className="hero" id="top">
-      <img className="hero-image" src="/images/hero-underwater.png" alt="Dreamlike underwater light" />
+      <img className="hero-image" src={assetPath('/images/hero-underwater.png')} alt="Dreamlike underwater light" />
       <div className="hero-shade" />
       <div className="grain" />
       <header className={scrolled ? 'nav scrolled' : 'nav'}>
@@ -70,7 +71,7 @@ function App() {
     <section className="about section wrap" id="about">
       <div className="section-kicker"><span>01</span> ABOUT / 我是谁</div>
       <div className="about-grid">
-        <TiltedCard imageSrc="/images/about-portrait.png" altText="Delgadina Sun portrait" captionText="DELGADINA SUN / 2026" containerHeight="440px" containerWidth="100%" imageHeight="100%" imageWidth="100%" rotateAmplitude={20} scaleOnHover={1.15} showMobileWarning={false} showTooltip={true} displayOverlayContent={false} />
+        <TiltedCard imageSrc={assetPath('/images/about-portrait.png')} altText="Delgadina Sun portrait" captionText="DELGADINA SUN / 2026" containerHeight="440px" containerWidth="100%" imageHeight="100%" imageWidth="100%" rotateAmplitude={20} scaleOnHover={1.15} showMobileWarning={false} showTooltip={true} displayOverlayContent={false} />
         <div className="about-copy">
           <h2>把策略变成<br/><em>有温度的视觉。</em></h2>
           <p>孙梓怡 / DELGADINA SUN。4 年+品牌与内容实战经验，在商业增长与图像表达之间工作。擅长从 0 到 1 完成品牌视觉、内容叙事与数字触点。</p>
@@ -105,10 +106,10 @@ function App() {
       <div className="section-kicker"><span>03</span> CAPABILITIES / 能力</div>
       <h2>Generalist by nature.<br/><em>Precise by practice.</em></h2>
       <SkillsCircularGallery items={[
-        { number: '01', title: 'Brand world', image: '/images/skill-brand-world.jpg' },
-        { number: '02', title: 'Image making', image: '/images/skill-image-making.jpg' },
-        { number: '03', title: 'AI native', image: '/images/skill-ai-native.jpg' },
-        { number: '04', title: 'Digital touchpoints', image: '/images/skill-digital-touchpoints.jpg' },
+        { number: '01', title: 'Brand world', image: assetPath('/images/skill-brand-world.jpg') },
+        { number: '02', title: 'Image making', image: assetPath('/images/skill-image-making.jpg') },
+        { number: '03', title: 'AI native', image: assetPath('/images/skill-ai-native.jpg') },
+        { number: '04', title: 'Digital touchpoints', image: assetPath('/images/skill-digital-touchpoints.jpg') },
       ]} bend={0.95} textColor="#1d2426" scrollEase={0.07} scrollSpeed={2.1} />
     </section>
 
@@ -143,7 +144,7 @@ function App() {
     </section>
 
     <footer id="contact" className="contact-finale">
-      <img className="footer-image" src="/images/footer-portrait-light.png" alt="Dreamlike portrait in light" />
+      <img className="footer-image" src={assetPath('/images/footer-portrait-light.png')} alt="Dreamlike portrait in light" />
       <div className="footer-vignette" />
       <div className="wrap footer-content">
         <p className="eyebrow">05 / START A CONVERSATION</p>
@@ -152,7 +153,7 @@ function App() {
         <div className="footer-actions">
           <a className="email" href="mailto:Miacheno401@gmail.com">Miacheno401@gmail.com <span>↗</span></a>
           <a className="wechat-link" href="tel:15564110401">WECHAT · 15564110401</a>
-          <a className="wechat-link" href="Delgadina-Sun-CV.pdf" download>DOWNLOAD CV</a>
+          <a className="wechat-link" href={assetPath('/Delgadina-Sun-CV.pdf')} download>DOWNLOAD CV</a>
           <a className="wechat-link" href="mailto:Miacheno401@gmail.com?subject=Portfolio%20link%20request">XHS / BEHANCE</a>
         </div>
         <div className="footer-meta"><span>HANGZHOU / CHINA</span><span>VISUAL · AI · BRAND DESIGN</span><span>© 2026 DELGADINA SUN</span></div>
